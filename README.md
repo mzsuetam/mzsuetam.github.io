@@ -8,7 +8,7 @@ mzsuetam
 
 ISI student on EAIiIB AGH
 
-[Link to the best page on the Internet](mzsuetam.github.io).
+[Link to the best page on the Internet](https://mzsuetam.github.io/).
 
 # My page contains:
 
