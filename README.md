@@ -2,46 +2,22 @@
 layout: default
 ---
 
-# Abut me
+<h1>Abut me</h1>
 
-mzsuetam
+<p>mzsuetam</p>
 
-ISI student on EAIiIB AGH
+<p>ISI student on EAIiIB AGH</p>
 
-[Link to the best page on the Internet](mzsuetam.github.io).
+<a href="mzsuetam.github.io">Link to the best page on the Internet</a>.
 
-# My page contains:
+<h2> My page contains:</2>
 
-This is a *normal* paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+This is a <strong>normal</strong> paragraph following a <em>header</em>. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-### blockquote
-
->  Power!
->  Unlimited power!
-
+<h2>blockquote</h2>
+<blockquote>
+Power!
+Unlimited power!
+<blockquote>
 - Emperor Palpatine
 
-### Python code with syntax highlighting
-
-```python
-	print("Hello World!")
-```
-
-### Unordered list
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-### Ordered list
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| 1  | 2  | 3  |
-|:---|:---|:---|
-| 1a | 2a | 3a |
-| 1b | 2b | 3b |
