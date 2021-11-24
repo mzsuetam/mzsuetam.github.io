@@ -38,7 +38,7 @@ This is a *normal* paragraph following a header. GitHub is a code hosting platfo
 2.  This is an ordered list following a header.
 3.  This is an ordered list following a header.
 
-###### Header 6
+### Table
 
 | 1  | 2  | 3  |
 |:---|:---|:---|
