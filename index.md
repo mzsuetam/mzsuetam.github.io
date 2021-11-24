@@ -18,7 +18,8 @@ This is a *normal* paragraph following a header. GitHub is a code hosting platfo
 
 >  Power!
 >  Unlimited power!
-- Emperor Palpatine
+
+Emperor Palpatine
 
 ### Python code with syntax highlighting
 
