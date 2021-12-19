@@ -1,19 +1,3 @@
----
-layout: default
----
-
-# Abut me
-
-mzsuetam
-
-ISI student on EAIiIB AGH
-------------
-
->  Power!
->  Unlimited power!
-
-Emperor Palpatine
-
 # Moje projekty:
 ### SLOT
 Projekt dotyczy stworzenia prostej, arcade'owej gry 2D. Użyliśmy PyGame'a, i skorzystaliśmy z darmowych asset'ów. Całe przedsięwzięcie przede wszystkim służyło do zapoznania się z technologiami, które posłuża nam w przyszłości do tworzenia bardziej zaawansowanych projektów. Nasz zespół:
