@@ -7,41 +7,21 @@ layout: default
 mzsuetam
 
 ISI student on EAIiIB AGH
-
-[Link to the best page on the Internet](mzsuetam.github.io).
-
-# My page contains:
-
-This is a *normal* paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-### blockquote
+------------
 
 >  Power!
 >  Unlimited power!
 
 Emperor Palpatine
 
-### Python code with syntax highlighting
+# Moje projekty:
+### SLOT
+Projekt dotyczy stworzenia prostej, arcade'owej gry 2D. Użyliśmy PyGame'a, i skorzystaliśmy z darmowych asset'ów. Całe przedsięwzięcie przede wszystkim służyło do zapoznania się z technologiami, które posłuża nam w przyszłości do tworzenia bardziej zaawansowanych projektów. Nasz zespół:
+* [Mateusz Mazur](https://mzsuetam.github.io/)
+* [Michał Koczkodaj](https://mkoczkodaj.github.io/)
+* [Hubert Asztabski](https://sztaba.github.io/)
+* [Jakub Głowacki](https://jakubg-git.github.io/)
+* [Jan Karkowski](https://jankrk.github.io/)
+* [Bartłomiej Stępniewski](https://beto4444.github.io/)
 
-```python
-	print("Hello World!")
-```
-
-### Unordered list
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-### Ordered list
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-### Table
-
-| 1  | 2  | 3  |
-|:---|:---|:---|
-| 1a | 2a | 3a |
-| 1b | 2b | 3b |
+GitHub naszego projektu [SLOT](https://github.com/AGH-Narzedzia-Informatyczne-2021-2022/SLOT)
