@@ -1,3 +1,5 @@
 theme: jekyll-theme-minimal
 title: "mzsuetam"
+logo:
 description: ""
+show_downloads: false
