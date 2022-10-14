@@ -7,9 +7,9 @@ All my projects published on GitHub can be found [here](https://github.com/mzsue
 
 ## Gene Graph Editor
 
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">own project</span>**
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">Angular</span>**
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">Typescript</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">own project</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">Angular</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">Typescript</span>**
 
 > Graph editor written in Angular.\
 > Developed with useage & customisation ease in mind.\
@@ -22,9 +22,9 @@ All my projects published on GitHub can be found [here](https://github.com/mzsue
 
 ## FppShoplist - own project
 
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">own project</span>**
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">C++</span>**
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">QT</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">own project</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">C++</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">QT</span>**
 
 > FppShoplist is an addition to FPP Firma++ and is intended to extend the basic functions of FPP to more computer stations.
 
@@ -34,9 +34,9 @@ All my projects published on GitHub can be found [here](https://github.com/mzsue
 
 ## 
 
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">team project</span>**
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">main contributor</span>**
-**<span style="background-color: blue; padding:5px; border-radius: 5px;">C++</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">team project</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">main contributor</span>**
+**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">C++</span>**
 
 > My implementations of some basic algorithrms and data structures.
 > Based on Cormen's "Introduction to algorithms".
