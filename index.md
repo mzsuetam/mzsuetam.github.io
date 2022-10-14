@@ -1,15 +1,14 @@
 # My projects
 
-List of the most interesting projects that I had the pleasure to develop. \
-All my projects published on GitHub can be found [here](https://github.com/mzsuetam).
+**List of the most interesting projects that I have been developing.**
 
 ---
 
 ## Gene Graph Editor
 
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">own project</span>**
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">Angular</span>**
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">Typescript</span>**
+**<span class="badge">own project</span>**
+**<span class="badge">Angular</span>**
+**<span class="badge">Typescript</span>**
 
 > Graph editor written in Angular.\
 > Developed with useage & customisation ease in mind.\
@@ -22,9 +21,9 @@ All my projects published on GitHub can be found [here](https://github.com/mzsue
 
 ## FppShoplist - own project
 
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">own project</span>**
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">C++</span>**
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">QT</span>**
+**<span class="badge">own project</span>**
+**<span class="badge">C++</span>**
+**<span class="badge">QT</span>**
 
 > FppShoplist is an addition to FPP Firma++ and is intended to extend the basic functions of FPP to more computer stations.
 
@@ -32,11 +31,11 @@ All my projects published on GitHub can be found [here](https://github.com/mzsue
 
 ---
 
-## 
+## myAISD
 
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">team project</span>**
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">main contributor</span>**
-**<span style="background-color: lightblue; padding:5px; border-radius: 5px;">C++</span>**
+**<span class="badge">team project</span>**
+**<span class="badge">main contributor</span>**
+**<span class="badge">C++</span>**
 
 > My implementations of some basic algorithrms and data structures.
 > Based on Cormen's "Introduction to algorithms".
