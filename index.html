@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateusz Mazur</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+  </head>
+  <body onload="init()">
+	<header id="container-header">
+		<div id="container-header-text"></div>
+		<div class="header-spacer" style="margin: 10px 0 0 0"></div>
+	</header>
+	<section id="container">
+		<div id="bookmark-1" class="bookmark" onclick="toogleContentBoxView(1)">
+			<h3>Projects</h3>
+		</div>	
+		<div id="bookmark-2" class="bookmark" onclick="toogleContentBoxView(2)">
+			<h3>Experience</h3>
+		</div>
+
+		<div id="content-box-1" class="content-box transitions">
+
+			<h2>FppShoplist</h2>	
+			<i class="badge">own project</i>
+			<i class="badge">C++</i>
+			<i class="badge">QT</i>
+			<blockquote> 
+				FppShoplist is an addition to FPP Firma++ (warehouse management programme)
+				and is intended to extend the basic functions of FPP to more computer stations.
+				FppShoplist allows to operate on items managed in FPP by importing a FPP export
+				file to another terminal. After the import user has permanent access to all items and
+				their stats. Items can be simply searched or inserted into main list, as if a receipt or
+				invoice were made. The list can be transferred via the Internet to FppShoplist server and
+				inserted into real receipt or invoice in FPP Firma++.		
+			</blockquote>
+			<a class="href-icon" href="https://github.com/mzsuetam/fppShoplist"><img src="assets/github.png"></a>
+			<div style="clear: both;"></div>
+			
+			<div class="spacer"></div>
+			
+			<h2>Gene Graph Editor</h2> 
+			<i class="badge">own project</i>
+			<i class="badge">Angular</i>
+			<i class="badge">Typescript</i>
+			<blockquote>
+				Gene Graph Editor is a client application developed in Angular intended to offer simple
+				solution for graph presenting and editing in web applications. It was created with usage
+				& customisation ease in mind, allows simple graph appearance changing and node edges
+				details editing.
+			</blockquote>
+			<a class="href-icon" href="https://github.com/mzsuetam/Gene-Graph-Editor"><img src="assets/github.png"></a>
+			<a class="href-icon" href="https://mzsuetam.github.io/gene-graph-editor/"><img src="assets/www.png"></a>
+			<div style="clear: both;"></div>
+			
+			<div class="spacer"></div>		
+			
+			<h2>myAISD</h2>
+			<i class="badge">personal project</i>
+			<i class="badge">C++</i>
+			<blockquote>
+				MyAISD is a set of my implementations of some basic algorithms and data structures
+				based on Cormen's "Introduction to algorithms" ourse. The aim of the project was to get
+				acquainted with basic sorting & graph algorithms.
+			</blockquote>
+			<a class="href-icon" href="https://github.com/mzsuetam/myAiSD"><img src="assets/github.png"></a>
+			<div style="clear: both;"></div>
+		</div>
+
+		<div id="content-box-2" class="content-box transitions">
+			<h2>ZHP education instructor</h2>
+			<i class="badge">2019 - present</i>
+			<blockquote>
+				Volunteer work with children, educating and rising by challenging them, managing actions such as:
+				organizing events including multiple training courses and two-week camps for youngsters, 
+				managing a small operational team, taking full responsibility for the safety of participants.
+				Member of a promotion team in the local unit in Myślenice.
+			</blockquote>
+
+			<div class="spacer"></div>	
+
+			<h2>Member of a Student Scientific Association</h2>
+			<i class="badge">2022 - present</i>
+			<blockquote>
+				Student Scientific Association ”Modeling in finances” offers opportunities to work on
+				advanced, noncausal projects. Work on creating sophisticated web services and simulation
+				software development. All that under a supervision of experienced Professor Andrzej M.
+				Skulimowski.
+			</blockquote>
+
+			<div class="spacer"></div>		
+
+			<h2>Intership in P&B Incubator</h2>
+			<i class="badge">June 2022</i>
+			<blockquote>
+				Develop advanced web pages. Work on a client-server based app application using
+				mainly Angular, TypeScript, C++ and SQL. Study web technologies such as REST API,
+				practice in communication with DB, and Ubuntu server configuration.
+			</blockquote>
+		</div>
+	</section>
+
+	<section id="about-me">	
+		<h1>Mateusz Mazur</h1> 
+		Computer Science and Intelligent Systems intern, AGH
+
+		<div class="header-spacer"></div>
+
+		<div id="about-me-box-1" class="about-me-box transitions" onclick="toogleAboutMeBoxView(1)">
+			<h3>Personal Details</h3>
+
+			<p class="about-me-value"><b>D.O.B.:</b> November 25, 2002 </p>
+			<p class="about-me-value"><b>Phone:</b> <a href="tel:+48697477411">697 477 411</a> </p>
+			<p class="about-me-value"><b>E-mail:</b> <a href="mailto:m-mazur@wp.pl">m-mazur@wp.pl</a> </p>
+			<p class="about-me-value"><b>GitHub:</b> <a href="https://github.com/mzsuetam">mzsuetam</a> </p>
+			<p class="about-me-value"><b>Linkedin:</b> <a href="https://www.linkedin.com/in/matuesz-mazur-8415bb232/">matuesz-mazur-8415bb232</a> </p>
+		</div>
+
+		<div class="spacer"></div>
+
+		<div id="about-me-box-2" class="about-me-box transitions" onclick="toogleAboutMeBoxView(2)">
+			<h3>Education</h3>
+
+			<p class="about-me-value"><b>AGH University of Science and Technology, Computer Science and Intelligent Systems</b>
+				<br><i>2021 - present</i><br>				
+				2nd year of Computer Science and Intelligent Systems study.
+				The course is devoted to providing knowledge and practice in the field of computer science
+				in the broad sense. A lot of emphasis is put on creating and designing IT solutions that
+				use and integrate various intelligent systems.
+			</p>
+		</div>
+
+		<div class="spacer"></div>
+
+		<div id="about-me-box-3" class="about-me-box transitions" onclick="toogleAboutMeBoxView(3)">
+			<h3>Certifications</h3>
+			<p class="about-me-value"><b>Certificate in Advanced English<br>(C1 Adv.):</b> Cambridge English</p>
+			<p class="about-me-value"><b>ECDL in MS Excel:</b> CTI</p>
+		</div>	
+
+		<div class="spacer"></div>	
+		
+		<div id="about-me-box-4" class="about-me-box transitions" onclick="toogleAboutMeBoxView(4)">
+			<h3>Skills</h3>
+
+			<p class="about-me-value"><b>Polish:</b> Native</p>
+			<p class="about-me-value"><b>English:</b> C1</p>
+			<p class="about-me-value"><b>German:</b> B1</p>
+			<br>
+			<p class="about-me-value"><b>C:</b> Basic</p>
+			<p class="about-me-value"><b>C++:</b> Advanced</p>
+			<p class="about-me-value"><b>Python:</b> Intermediate</p>
+			<p class="about-me-value"><b>Java:</b> Basic</p>
+			<p class="about-me-value"><b>SQL:</b> Intermediate</p>
+			<p class="about-me-value"><b>HTML, CSS:</b> Intermediate</p>
+			<p class="about-me-value"><b>Angular:</b> Intermediate</p>
+			<p class="about-me-value"><b>Typescript:</b> Intermediate</p>
+			<p class="about-me-value"><b>Git:</b> Basic</p>
+			<p class="about-me-value"><b>Dcoker:</b> Basic</p>
+			<br>
+			<p class="about-me-value"><b>Software:</b> Clion, IntelliJ IDEA, QT Creator, Visual Studio Code, STM32CubeIDE</p>
+		</div>
+		<div class="spacer"></div>	
+		
+
+
+	</section>
+</body>
+</html>
