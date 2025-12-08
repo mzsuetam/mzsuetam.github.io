@@ -144,14 +144,35 @@ function renderTree(obj, openPathArr = []) {
     treeDiv.appendChild(ul);
 }
 
+function getIpynbForHtml(path) {
+    // Try to find the corresponding ipynb for a given html path using treeData
+    if (!path.endsWith('.html')) return null;
+    // Remove 'content/' and '.html' to get the base
+    const rel = path.replace(/^content\//, '').replace(/\.html$/, '');
+    const parts = rel.split('/');
+    let node = treeData;
+    for (let i = 0; i < parts.length - 1; i++) {
+        node = node[parts[i]];
+        if (!node) return null;
+    }
+    const base = parts[parts.length - 1];
+    if (node && node[base] && node[base].ipynb) {
+        return node[base].ipynb;
+    }
+    return null;
+}
+
 function setFileHeader(path, ipynbPath = null) {
     const filePathDiv = document.getElementById('filePath');
     if (filePathDiv) {
         let displayPath = path ? path.replace(/^content\//, '') : '';
-        if (ipynbPath) {
-            // If ipynb exists, link header to ipynb
-            const displayIpynb = ipynbPath.replace(/^content\//, '');
-            const repoUrl = `https://github.com/mzsuetam/mzsuetam.github.io/blob/main/${ipynbPath}`;
+        let ipynb = ipynbPath;
+        if (!ipynb && path && path.endsWith('.html')) {
+            ipynb = getIpynbForHtml(path);
+        }
+        if (ipynb) {
+            const displayIpynb = ipynb.replace(/^content\//, '');
+            const repoUrl = `https://github.com/mzsuetam/mzsuetam.github.io/blob/main/${ipynb}`;
             filePathDiv.innerHTML = `<a href='${repoUrl}' target='_blank' rel='noopener noreferrer'>${displayIpynb}</a>`;
         } else if (displayPath) {
             const repoUrl = `https://github.com/mzsuetam/mzsuetam.github.io/blob/main/${path}`;
