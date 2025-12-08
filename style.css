@@ -1,0 +1,140 @@
+.centered-content {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+}
+
+#fileTree ul {
+    list-style: none;
+    padding-left: 1.5em;
+    margin: 0;
+}
+
+#fileTree .tree-row {
+    display: block;
+    padding: 3px 0;
+    cursor: pointer;
+}
+
+#fileTree .tree-icon {
+    vertical-align: middle;
+    margin-right: 0.3em;
+    position: relative;
+    top: -2px;
+}
+
+#fileTree .tree-icon {
+    font-size: 1.1em;
+    color: #6c757d;
+    margin-right: 0.2em;
+    transition: color 0.2s;
+}
+
+#fileTree .tree-label {
+    font-weight: 500;
+}
+
+#fileTree .caret {
+    cursor: pointer;
+    user-select: none;
+}
+
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.caret-down::before {
+    transform: rotate(90deg);
+    display: inline-block;
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+body {
+    background: #f8f9fa;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.cv-header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.cv-header h1 {
+    margin-bottom: 0;
+}
+
+.cv-header .links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.cv-header .links a:hover {
+    text-decoration: underline;
+}
+
+.main-area {
+    min-height: calc(100vh - 160px);
+    height: auto;
+}
+
+#fileTree ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+#fileTree li {
+    padding: 3px 0;
+}
+
+#fileTree li.file-item {
+    cursor: pointer;
+}
+
+#fileTree li.file-item:hover {
+    text-decoration: underline;
+}
+
+#fileTree .caret:hover {
+    text-decoration: underline;
+}
+
+#content {
+    background: white;
+    padding: 2rem;
+    border-radius: 6px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Make scrollable markdown area fit better */
+.markdown-scroll {
+    max-height: 65vh;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.notebook-frame {
+  width: 100%;
+  height: 65vh;
+  border: none;
+  background: white;
+}
+
+body {
+    overflow-y: hidden;
+}

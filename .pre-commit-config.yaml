@@ -1,0 +1,13 @@
+repos:
+  - repo: local
+    hooks:
+      - id: make-tree
+        name: Run just make-tree
+        entry: just make-tree
+        language: system
+        pass_filenames: false
+      - id: check-render-notebooks
+        name: Run just check-render-notebooks
+        entry: just check-render-notebooks
+        language: system
+        pass_filenames: false
