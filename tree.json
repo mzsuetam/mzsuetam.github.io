@@ -1,0 +1,15 @@
+{
+  "teaching": {
+    "data-engeenering": {
+      "dataframe-iteration": {
+        "html": "content/teaching/data-engeenering/dataframe-iteration.html",
+        "ipynb": "content/teaching/data-engeenering/dataframe-iteration.ipynb"
+      },
+      "README": "content/teaching/data-engeenering/README.md"
+    },
+    "README": "content/teaching/README.md"
+  },
+  "research": {
+    "README": "content/research/README.md"
+  }
+}
