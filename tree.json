@@ -5,6 +5,7 @@
         "html": "content/teaching/data-engeenering/dataframe-iteration.html",
         "ipynb": "content/teaching/data-engeenering/dataframe-iteration.ipynb"
       },
+      "pandas-basics-best-practices": "content/teaching/data-engeenering/pandas-basics-best-practices.md",
       "README": "content/teaching/data-engeenering/README.md"
     },
     "README": "content/teaching/README.md"

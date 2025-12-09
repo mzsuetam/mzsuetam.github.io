@@ -5,6 +5,8 @@ import sys
 
 from make_tree import walk
 
+JUPYTER_TEMPLATES = ["lab", "classic", "basic"]
+
 def render_notebooks(tree, force=False):
     for key, value in tree.items():
         if isinstance(value, dict):
@@ -17,7 +19,7 @@ def render_notebooks(tree, force=False):
             )
             if force or needs_render:
                 subprocess.run([
-                    "jupyter", "nbconvert", "--to", "html", "--template", "lab", value 
+                    "jupyter", "nbconvert", "--to", "html", value 
                 ])
             else:
                 print(f"{value}: skipped")

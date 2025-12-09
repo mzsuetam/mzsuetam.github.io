@@ -70,7 +70,9 @@ body {
 
 .cv-header {
     background: white;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
+
+    display: flex;
 }
 
 .cv-header h1 {
@@ -117,15 +119,7 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 6px;
-    max-width: 900px;
     margin: 0 auto;
-}
-
-/* Make scrollable markdown area fit better */
-.markdown-scroll {
-    max-height: 65vh;
-    overflow: auto;
-    box-sizing: border-box;
 }
 
 .notebook-frame {
@@ -133,8 +127,74 @@ body {
   height: 65vh;
   border: none;
   background: white;
+  zoom: 1.1;
+}
+
+/* Make scrollable markdown area fit better */
+.markdown-scroll {
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+.markdown-frame {
+    width: 100%;
+    height: 70vh;
 }
 
 body {
+    width:100vw;
     overflow-y: hidden;
+}
+
+.active-file .tree-label, .active-file .tree-icon {
+    color: var(--bs-primary, #0d6efd) !important;
+    background: none !important;
+}
+
+@media (max-width: 768px) {
+
+
+    .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cv-header h1 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .cv-header  .links {
+        text-align: center;
+        width: 100%;
+    }
+
+    .cv-header  p {
+        text-align: center;
+        width: 100%;
+    }
+
+
+    body {
+        overflow-y: auto;
+    }
+
+    #contentRow {
+        height: 90vh;
+    }
+
+    .markdown-frame {
+        height: 100%;
+        text-align: justify;
+    }
+
+    .notebook-frame {
+        height: 100%;
+    }
+
+    #contentRow{
+        text-align: left;
+    }
 }

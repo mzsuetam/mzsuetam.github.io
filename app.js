@@ -75,12 +75,14 @@ function initTabs(folders) {
     });
 }
 
-function buildTree(obj, openPathArr = []) {
+function buildTree(obj, openPathArr = [], parentPath = "content") {
     const ul = document.createElement("ul");
     Object.entries(obj).forEach(([name, value]) => {
         const li = document.createElement("li");
         li.classList.add("tree-row");
+        let filePath = null;
         if (typeof value === "string") {
+            filePath = value;
             let iconClass = "bi bi-file-earmark-text tree-icon";
             if (name.endsWith('.ipynb')) {
                 iconClass = "bi bi-filetype-py tree-icon";
@@ -91,15 +93,17 @@ function buildTree(obj, openPathArr = []) {
             }
             li.innerHTML = `<i class='${iconClass}'></i> <span class='tree-label'>${toTitleCase(name)}</span>`;
             li.classList.add("file-item");
+            li.setAttribute('data-path', filePath);
             li.onclick = (e) => {
                 e.stopPropagation();
                 window.location.hash = encodeURIComponent(value);
                 loadFile(value, null);
             };
         } else if (value && typeof value === "object" && value.html && value.ipynb) {
-            // Both html and ipynb exist: sidebar loads html, header links to ipynb
+            filePath = value.html;
             li.innerHTML = `<i class='bi bi bi-filetype-py tree-icon'></i> <span class='tree-label'>${toTitleCase(name)}</span>`;
             li.classList.add("file-item");
+            li.setAttribute('data-path', filePath);
             li.onclick = (e) => {
                 e.stopPropagation();
                 window.location.hash = encodeURIComponent(value.html);
@@ -183,6 +187,23 @@ function setFileHeader(path, ipynbPath = null) {
     }
 }
 
+function highlightTreeFile(path) {
+    // Remove highlight from all file items
+    document.querySelectorAll('#fileTree .file-item').forEach(item => {
+        item.classList.remove('active-file');
+    });
+    // Highlight the file item matching the path
+    const items = document.querySelectorAll('#fileTree .file-item');
+    items.forEach(item => {
+        // Store the file path in a data attribute for each file item
+        const filePath = item.getAttribute('data-path');
+        if (filePath && filePath === path) {
+            item.classList.add('active-file');
+        }
+    });
+}
+
+// Call highlightTreeFile after loading a file
 function loadFile(path, ipynbPath = null) {
     fetch(path)
         .then(res => res.text())
@@ -201,6 +222,7 @@ function loadFile(path, ipynbPath = null) {
             contentDiv.innerHTML = html;
             setFileHeader(path, ipynbPath);
             highlightTabForFile(path);
+            highlightTreeFile(path);
         });
 
     // Highlight the correct tab for the opened file
@@ -235,6 +257,7 @@ window.onload = function () {
     const mainContent = document.querySelector('main');
     const contentDiv = document.getElementById('content');
     const fullscreenBtn = document.getElementById('fullscreenBtn');
+    const pageHeader = document.getElementsByTagName('header')[0];
     let sidebarVisible = true;
 
     fullscreenBtn.addEventListener('click', function () {
@@ -242,9 +265,13 @@ window.onload = function () {
         sidebar.style.display = sidebarVisible ? '' : 'none';
         fullscreenBtn.innerHTML = sidebarVisible ? '<i class="bi bi-arrows-fullscreen"></i>' : '<i class="bi bi-arrows-angle-contract"></i>';
         if (!sidebarVisible) {
+            pageHeader.classList.remove('d-flex');
+            pageHeader.classList.add('d-none');
             mainContent.classList.remove('col-md-9');
             mainContent.classList.add('w-100');
         } else {
+            pageHeader.classList.remove('d-none');
+            pageHeader.classList.add('d-flex');
             mainContent.classList.add('col-md-9');
             mainContent.classList.remove('w-100');
         }
