@@ -132,13 +132,24 @@ body {
 
 /* Make scrollable markdown area fit better */
 .markdown-scroll {
-    overflow: auto;
+    overflow: scroll;
     box-sizing: border-box;
+}
+
+.markdown-scroll code {
+    white-space: pre-wrap;
+    color: #0d6efd;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .markdown-frame {
     width: 100%;
     height: 70vh;
+}
+
+.markdown-frame .bad {
+    color: rgb(224, 0, 0);
+    /* text-decoration: line-through; */
 }
 
 body {
@@ -183,6 +194,7 @@ body {
 
     #contentRow {
         height: 90vh;
+        text-align: left;
     }
 
     .markdown-frame {
@@ -194,7 +206,4 @@ body {
         height: 100%;
     }
 
-    #contentRow{
-        text-align: left;
-    }
 }

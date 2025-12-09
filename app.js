@@ -75,22 +75,93 @@ function initTabs(folders) {
     });
 }
 
+SUPPORTED_FILE_ICONS = [
+    "filetype-aac",
+    "filetype-ai",
+    "filetype-bmp",
+    "filetype-cs",
+    "filetype-css",
+    "filetype-csv",
+    "filetype-doc",
+    "filetype-docx",
+    "filetype-exe",
+    "filetype-gif",
+    "filetype-heic",
+    "filetype-html",
+    "filetype-java",
+    "filetype-jpg",
+    "filetype-js",
+    "filetype-json",
+    "filetype-jsx",
+    "filetype-key",
+    "filetype-m4p",
+    "filetype-md",
+    "filetype-mdx",
+    "filetype-mov",
+    "filetype-mp3",
+    "filetype-mp4",
+    "filetype-otf",
+    "filetype-pdf",
+    "filetype-php",
+    "filetype-png",
+    "filetype-ppt",
+    "filetype-pptx",
+    "filetype-psd",
+    "filetype-py",
+    "filetype-raw",
+    "filetype-rb",
+    "filetype-sass",
+    "filetype-scss",
+    "filetype-sh",
+    "filetype-sql",
+    "filetype-svg",
+    "filetype-tiff",
+    "filetype-tsx",
+    "filetype-ttf",
+    "filetype-txt",
+    "filetype-wav",
+    "filetype-woff",
+    "filetype-xls",
+    "filetype-xlsx",
+    "filetype-xml",
+    "filetype-yml",
+]
+
 function buildTree(obj, openPathArr = [], parentPath = "content") {
     const ul = document.createElement("ul");
-    Object.entries(obj).forEach(([name, value]) => {
+    // Reorder: README last
+    const entries = Object.entries(obj);
+    const sortedEntries = entries.sort((a, b) => {
+        if (a[0].toLowerCase() === 'readme' || a[0].toLowerCase() === 'readme.md') return 1;
+        if (b[0].toLowerCase() === 'readme' || b[0].toLowerCase() === 'readme.md') return -1;
+        return a[0].localeCompare(b[0]);
+    });
+    sortedEntries.forEach(([name, value]) => {
         const li = document.createElement("li");
         li.classList.add("tree-row");
         let filePath = null;
         if (typeof value === "string") {
             filePath = value;
-            let iconClass = "bi bi-file-earmark-text tree-icon";
-            if (name.endsWith('.ipynb')) {
-                iconClass = "bi bi-filetype-py tree-icon";
-            } else if (name.endsWith('.md')) {
-                iconClass = "bi bi-file-earmark-richtext tree-icon";
-            } else if (name.endsWith('.html')) {
-                iconClass = "bi bi-file-earmark-binary tree-icon";
+            let iconClass = "bi bi-filetype-md tree-icon"; // Default icon for no extension
+
+            // if (name.endsWith('.ipynb')) {
+            //     iconClass = "bi bi-filetype-py tree-icon";
+            // } else if (name.endsWith('.md')) {
+            //     iconClass = "bi bi-filetype-md tree-icon";
+            // } else if (name.endsWith('.html')) {
+            //     iconClass = "bi bi-filetype-html tree-icon";
+            // }
+
+            // Determine icon based on file extension
+            const extMatch = name.match(/\.([a-zA-Z0-9]+)$/);
+            if (extMatch) {
+                const ext = extMatch[1].toLowerCase();
+                const candidateIcon = `filetype-${ext}`;
+                if (SUPPORTED_FILE_ICONS.includes(candidateIcon)) {
+                    iconClass = `bi bi-${candidateIcon} tree-icon`;
+                }
             }
+
             li.innerHTML = `<i class='${iconClass}'></i> <span class='tree-label'>${toTitleCase(name)}</span>`;
             li.classList.add("file-item");
             li.setAttribute('data-path', filePath);
@@ -210,7 +281,7 @@ function loadFile(path, ipynbPath = null) {
         .then(content => {
             let html = null;
             if (path.endsWith('.md')) {
-                html = `<div class='markdown-scroll'>${marked.parse(content)}</div>`;
+                html = `<div class='markdown-scroll markdown-frame'>${marked.parse(content)}</div>`;
             }
             else if (path.endsWith('.html')) {
                 html = `
@@ -258,6 +329,8 @@ window.onload = function () {
     const contentDiv = document.getElementById('content');
     const fullscreenBtn = document.getElementById('fullscreenBtn');
     const pageHeader = document.getElementsByTagName('header')[0];
+    const notebookFrame = document.getElementsByClassName('notebook-frame');
+    const markdownFrame = document.getElementsByClassName('markdown-frame');
     let sidebarVisible = true;
 
     fullscreenBtn.addEventListener('click', function () {
@@ -269,11 +342,25 @@ window.onload = function () {
             pageHeader.classList.add('d-none');
             mainContent.classList.remove('col-md-9');
             mainContent.classList.add('w-100');
+            // mainContent.style.height = '100vh';
+            if (notebookFrame.length > 0) {
+                notebookFrame[0].style.height = '80vh';
+            }
+            if (markdownFrame.length > 0) {
+                markdownFrame[0].style.height = '85vh';
+            }
         } else {
             pageHeader.classList.remove('d-none');
             pageHeader.classList.add('d-flex');
             mainContent.classList.add('col-md-9');
             mainContent.classList.remove('w-100');
+            // mainContent.style.height = '';
+            if (notebookFrame.length > 0) {
+                notebookFrame[0].style.height = '65vh';
+            }
+            if (markdownFrame.length > 0) {
+                markdownFrame[0].style.height = '70vh';
+            }
         }
     });
 

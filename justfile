@@ -1,7 +1,7 @@
 
 build-content:
-    just make-tree
     just render-notebooks
+    just make-tree
 
 make-tree:
     @echo "Creating project directory structure..."

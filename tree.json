@@ -1,6 +1,10 @@
 {
   "teaching": {
     "data-engeenering": {
+      "scaling-to-large-datasets": {
+        "html": "content/teaching/data-engeenering/scaling-to-large-datasets.html",
+        "ipynb": "content/teaching/data-engeenering/scaling-to-large-datasets.ipynb"
+      },
       "dataframe-iteration": {
         "html": "content/teaching/data-engeenering/dataframe-iteration.html",
         "ipynb": "content/teaching/data-engeenering/dataframe-iteration.ipynb"

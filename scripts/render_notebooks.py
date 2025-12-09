@@ -19,7 +19,11 @@ def render_notebooks(tree, force=False):
             )
             if force or needs_render:
                 subprocess.run([
-                    "jupyter", "nbconvert", "--to", "html", value 
+                    "jupyter", "nbconvert", 
+                    "--to", "html", 
+                    # "--HTMLExporter.theme=light",
+                    # "--Highlight2HTML.style=github",
+                    value 
                 ])
             else:
                 print(f"{value}: skipped")
