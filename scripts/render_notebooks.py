@@ -8,10 +8,11 @@ from make_tree import walk
 JUPYTER_TEMPLATES = ["lab", "classic", "basic"]
 
 def render_notebooks(tree, force=False):
-    for key, value in tree.items():
-        if isinstance(value, dict):
-            render_notebooks(value, force=force)
-        elif value.endswith(".ipynb"):
+    for key, values_dict in tree.items():
+        if isinstance(values_dict, dict) and not values_dict.get("path"):
+            render_notebooks(values_dict, force=force)
+        elif values_dict.get("path").endswith(".ipynb"):
+            value = values_dict.get("path")
             html_file = value[:-6] + ".html"
             needs_render = (
                 not os.path.exists(html_file) or

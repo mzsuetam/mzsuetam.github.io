@@ -2,19 +2,47 @@
   "teaching": {
     "data-engeenering": {
       "scaling-to-large-datasets": {
-        "html": "content/teaching/data-engeenering/scaling-to-large-datasets.html",
-        "ipynb": "content/teaching/data-engeenering/scaling-to-large-datasets.ipynb"
+        "html": {
+          "path": "content/teaching/data-engeenering/scaling-to-large-datasets.html",
+          "modification-date": "2025-12-09"
+        },
+        "ipynb": {
+          "path": "content/teaching/data-engeenering/scaling-to-large-datasets.ipynb",
+          "modification-date": "2025-12-09"
+        }
       },
       "dataframe-iteration": {
-        "html": "content/teaching/data-engeenering/dataframe-iteration.html",
-        "ipynb": "content/teaching/data-engeenering/dataframe-iteration.ipynb"
+        "html": {
+          "path": "content/teaching/data-engeenering/dataframe-iteration.html",
+          "modification-date": "2025-12-08"
+        },
+        "ipynb": {
+          "path": "content/teaching/data-engeenering/dataframe-iteration.ipynb",
+          "modification-date": "2025-12-08"
+        }
       },
-      "pandas-basics-best-practices": "content/teaching/data-engeenering/pandas-basics-best-practices.md",
-      "README": "content/teaching/data-engeenering/README.md"
+      "pandas-basics-best-practices": {
+        "path": "content/teaching/data-engeenering/pandas-basics-best-practices.md",
+        "modification-date": "2025-12-09"
+      },
+      "pandas-3.0.0-release-candidate": {
+        "path": "content/teaching/data-engeenering/pandas-3.0.0-release-candidate.md",
+        "modification-date": "2025-12-12"
+      },
+      "README": {
+        "path": "content/teaching/data-engeenering/README.md",
+        "modification-date": "2025-12-09"
+      }
     },
-    "README": "content/teaching/README.md"
+    "README": {
+      "path": "content/teaching/README.md",
+      "modification-date": "2025-12-08"
+    }
   },
   "research": {
-    "README": "content/research/README.md"
+    "README": {
+      "path": "content/research/README.md",
+      "modification-date": "2025-12-08"
+    }
   }
 }

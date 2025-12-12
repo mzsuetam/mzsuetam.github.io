@@ -1,3 +1,7 @@
+import { Marked } from "https://esm.sh/marked";
+import { markedHighlight } from "https://esm.sh/marked-highlight";
+import hljs from "https://esm.sh/highlight.js";
+
 const tabs = document.getElementById("folderTabs");
 const treeDiv = document.getElementById("fileTree");
 const contentDiv = document.getElementById("content");
@@ -75,7 +79,7 @@ function initTabs(folders) {
     });
 }
 
-SUPPORTED_FILE_ICONS = [
+const SUPPORTED_FILE_ICONS = [
     "filetype-aac",
     "filetype-ai",
     "filetype-bmp",
@@ -140,17 +144,30 @@ function buildTree(obj, openPathArr = [], parentPath = "content") {
         const li = document.createElement("li");
         li.classList.add("tree-row");
         let filePath = null;
-        if (typeof value === "string") {
-            filePath = value;
-            let iconClass = "bi bi-filetype-md tree-icon"; // Default icon for no extension
+        const badgeHtml = " <span \
+            class='badge rounded-pill bg-white text-primary border border-primary ms-2' \
+            style='transform: translateY(-2px); padding: 2px 5px'> \
+                <small style='transform: translateY(-1px); display: block;'>\
+                    new \
+                </small> \
+            </span>";
+        // Helper to check if file is new
+        function isNewFile(path) {
+            const modDateStr = searchTreeForModificationDate(path);
+            if (!modDateStr) return false;
+            const modDate = new Date(modDateStr);
+            const now = new Date();
+            const diffDays = (now - modDate) / (1000 * 60 * 60 * 24);
+            return diffDays < 7;
+        }
 
-            // if (name.endsWith('.ipynb')) {
-            //     iconClass = "bi bi-filetype-py tree-icon";
-            // } else if (name.endsWith('.md')) {
-            //     iconClass = "bi bi-filetype-md tree-icon";
-            // } else if (name.endsWith('.html')) {
-            //     iconClass = "bi bi-filetype-html tree-icon";
-            // }
+        function isReadmeFile(name) {
+            return name.toLowerCase() === 'readme' || name.toLowerCase() === 'readme.md';
+        }
+
+        if (value && typeof value === "object" && value.path) {
+            filePath = value.path;
+            let iconClass = "bi bi-filetype-md tree-icon"; // Default icon for no extension
 
             // Determine icon based on file extension
             const extMatch = name.match(/\.([a-zA-Z0-9]+)$/);
@@ -162,23 +179,23 @@ function buildTree(obj, openPathArr = [], parentPath = "content") {
                 }
             }
 
-            li.innerHTML = `<i class='${iconClass}'></i> <span class='tree-label'>${toTitleCase(name)}</span>`;
+            li.innerHTML = `<i class='${iconClass}'></i> <span class='tree-label'>${toTitleCase(name)}</span>${isNewFile(filePath) && !isReadmeFile(name) ? badgeHtml : ''}`;
             li.classList.add("file-item");
             li.setAttribute('data-path', filePath);
             li.onclick = (e) => {
                 e.stopPropagation();
-                window.location.hash = encodeURIComponent(value);
-                loadFile(value, null);
+                window.location.hash = encodeURIComponent(value.path);
+                loadFile(value.path, null);
             };
         } else if (value && typeof value === "object" && value.html && value.ipynb) {
-            filePath = value.html;
-            li.innerHTML = `<i class='bi bi bi-filetype-py tree-icon'></i> <span class='tree-label'>${toTitleCase(name)}</span>`;
+            filePath = value.html.path;
+            li.innerHTML = `<i class='bi bi bi-filetype-py tree-icon'></i> <span class='tree-label'>${toTitleCase(name)}</span>${isNewFile(filePath) ? badgeHtml : ''}`;
             li.classList.add("file-item");
             li.setAttribute('data-path', filePath);
             li.onclick = (e) => {
                 e.stopPropagation();
-                window.location.hash = encodeURIComponent(value.html);
-                loadFile(value.html, value.ipynb);
+                window.location.hash = encodeURIComponent(value.html.path);
+                loadFile(value.html.path, value.ipynb.path);
             };
         } else {
             // Folder logic
@@ -187,11 +204,13 @@ function buildTree(obj, openPathArr = [], parentPath = "content") {
             const label = document.createElement("span");
             label.className = "tree-label";
             label.textContent = toTitleCase(name);
+            // No badge for folders
             li.appendChild(folderIcon);
             li.appendChild(label);
             // Determine if this folder should be open
+            const folderPath = parentPath + '/' + name;
             let isOpen = openPathArr.length > 0 && openPathArr[0] === name;
-            const nestedUl = buildTree(value, isOpen ? openPathArr.slice(1) : []);
+            const nestedUl = buildTree(value, isOpen ? openPathArr.slice(1) : [], folderPath);
             nestedUl.classList.add("nested");
             if (isOpen) nestedUl.classList.add("active");
             li.appendChild(nestedUl);
@@ -202,8 +221,8 @@ function buildTree(obj, openPathArr = [], parentPath = "content") {
                 folderIcon.className = isOpen ? "bi bi-folder2-open tree-icon" : "bi bi-folder tree-icon";
                 // If opening, and README.md exists, open it
                 if (isOpen && typeof value === 'object' && value['README']) {
-                    window.location.hash = encodeURIComponent(value['README']);
-                    loadFile(value['README']);
+                    window.location.hash = encodeURIComponent(value['README'].path);
+                    loadFile(value['README'].path);
                 }
             };
             folderIcon.className = isOpen ? "bi bi-folder2-open tree-icon" : "bi bi-folder tree-icon";
@@ -237,6 +256,25 @@ function getIpynbForHtml(path) {
     return null;
 }
 
+function searchTreeForModificationDate(filePath) {
+    let node = treeData;
+    const parts = filePath.replace(/^content\//, '').split('/');
+    for (let i = 0; i < parts.length -1; i++) {
+        const part = parts[i];
+        if (node[part]) {
+            node = node[part];
+        } else {
+            return null;
+        }
+    }
+
+    // Remove extension from the last part to match the key in the tree
+    const lastPart = parts[parts.length - 1].replace(/\.[^/.]+$/, "");
+    const fileObj = node[lastPart];
+
+    return (fileObj ? fileObj["modification-date"] : null) || ( fileObj? fileObj["ipynb"] ? fileObj["ipynb"]["modification-date"] : null : null) || null;
+}
+
 function setFileHeader(path, ipynbPath = null) {
     const filePathDiv = document.getElementById('filePath');
     if (filePathDiv) {
@@ -245,16 +283,22 @@ function setFileHeader(path, ipynbPath = null) {
         if (!ipynb && path && path.endsWith('.html')) {
             ipynb = getIpynbForHtml(path);
         }
+
+        let modificationDate = searchTreeForModificationDate(ipynb || path);
+        modificationDate = modificationDate ? `<small>Last modified: ${modificationDate}</small>` : '';
+
         if (ipynb) {
             const displayIpynb = ipynb.replace(/^content\//, '');
             const repoUrl = `https://github.com/mzsuetam/mzsuetam.github.io/blob/main/${ipynb}`;
-            filePathDiv.innerHTML = `<a href='${repoUrl}' target='_blank' rel='noopener noreferrer'>${displayIpynb}</a>`;
+            filePathDiv.innerHTML = `<a href='${repoUrl}' target='_blank' rel='noopener noreferrer'>${displayIpynb}</a> ${modificationDate}`;
         } else if (displayPath) {
             const repoUrl = `https://github.com/mzsuetam/mzsuetam.github.io/blob/main/${path}`;
-            filePathDiv.innerHTML = `<a href='${repoUrl}' target='_blank' rel='noopener noreferrer'>${displayPath}</a>`;
+            filePathDiv.innerHTML = `<a href='${repoUrl}' target='_blank' rel='noopener noreferrer'>${displayPath}</a> ${modificationDate}`;
         } else {
             filePathDiv.textContent = '';
         }
+
+
     }
 }
 
@@ -274,8 +318,23 @@ function highlightTreeFile(path) {
     });
 }
 
+
 // Call highlightTreeFile after loading a file
 function loadFile(path, ipynbPath = null) {
+
+    const marked = new Marked(
+    markedHighlight({
+        // 1. Set the class prefix highlight.js expects
+        langPrefix: 'hljs language-',
+        
+        // 2. Define the highlight function
+        highlight(code, lang) {
+        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+        return hljs.highlight(code, { language }).value;
+        }
+    })
+    );
+
     fetch(path)
         .then(res => res.text())
         .then(content => {
