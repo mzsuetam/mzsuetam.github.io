@@ -10,7 +10,7 @@ let treeData = {};
 
 
 
-fetch("tree.json")
+fetch("tree.json?" + Date.now()) // Add cache-busting query param
     .then(res => res.json())
     .then(data => {
         treeData = data;
