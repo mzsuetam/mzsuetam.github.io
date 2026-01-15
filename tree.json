@@ -37,6 +37,10 @@
     "README": {
       "path": "content/teaching/README.md",
       "modification-date": "2025-12-08"
+    },
+    "agh-pandoc-slides-and-reports": {
+      "path": "content/teaching/agh-pandoc-slides-and-reports.md",
+      "modification-date": "2026-01-15"
     }
   },
   "research": {

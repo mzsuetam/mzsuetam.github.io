@@ -136,9 +136,16 @@ function buildTree(obj, openPathArr = [], parentPath = "content") {
     // Reorder: README last
     const entries = Object.entries(obj);
     const sortedEntries = entries.sort((a, b) => {
+        const isAFolder = typeof a[1] === "object" && !a[1].path;
+        const isBFolder = typeof b[1] === "object" && !b[1].path;
+
+        if (isAFolder && !isBFolder) return -1; // Folders come first
+        if (!isAFolder && isBFolder) return 1;  // Files come after folders
+
         if (a[0].toLowerCase() === 'readme' || a[0].toLowerCase() === 'readme.md') return 1;
         if (b[0].toLowerCase() === 'readme' || b[0].toLowerCase() === 'readme.md') return -1;
-        return a[0].localeCompare(b[0]);
+
+        return a[0].localeCompare(b[0]); // Alphabetical order
     });
     sortedEntries.forEach(([name, value]) => {
         const li = document.createElement("li");
