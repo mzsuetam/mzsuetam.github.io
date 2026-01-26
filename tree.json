@@ -11,6 +11,10 @@
           "modification-date": "2025-12-09"
         }
       },
+      "life-after-data-geneenering-course": {
+        "path": "content/teaching/data-engeenering/life-after-data-geneenering-course.md",
+        "modification-date": "2026-01-26"
+      },
       "dataframe-iteration": {
         "html": {
           "path": "content/teaching/data-engeenering/dataframe-iteration.html",
