@@ -1,7 +1,9 @@
 # Welcome!
 
 This website is a growing workspace where I share my work in computer science — spanning research and teaching materials. I am particularly interested in artificial intelligence, deep learning, and building reliable systems that connect theory with practice.
-<!-- This website is a growing workspace where I share my work in computer science — spanning research, teaching materials, and engineering projects. I am particularly interested in artificial intelligence, deep learning, and building reliable systems that connect theory with practice. -->
+
+I am a **PhD student in Technical Computer Science and Telecommunications** and a **research and teaching assistant at the Department of Computer Science and Artificial Intelligence** at AGH University of Kraków.
+
 
 Here you will find:
 - [**Research**](#content%2Fresearch%2FREADME.md) notes, experiments, and notebooks exploring modern AI and data-driven methods,
