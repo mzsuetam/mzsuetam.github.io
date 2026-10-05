@@ -1,6 +1,26 @@
 {
   "teaching": {
+    "inteligentne-przetwarzanie-sygnalow": {
+      "README": {
+        "path": "content/teaching/inteligentne-przetwarzanie-sygnalow/README.md",
+        "modification-date": "2026-10-05"
+      }
+    },
     "data-engeenering": {
+      "pandas-basics-best-practices": {
+        "path": "content/teaching/data-engeenering/pandas-basics-best-practices.md",
+        "modification-date": "2025-12-09"
+      },
+      "dataframe-iteration": {
+        "html": {
+          "path": "content/teaching/data-engeenering/dataframe-iteration.html",
+          "modification-date": "2025-12-08"
+        },
+        "ipynb": {
+          "path": "content/teaching/data-engeenering/dataframe-iteration.ipynb",
+          "modification-date": "2025-12-08"
+        }
+      },
       "scaling-to-large-datasets": {
         "html": {
           "path": "content/teaching/data-engeenering/scaling-to-large-datasets.html",
@@ -15,20 +35,6 @@
         "path": "content/teaching/data-engeenering/life-after-data-geneenering-course.md",
         "modification-date": "2026-01-26"
       },
-      "dataframe-iteration": {
-        "html": {
-          "path": "content/teaching/data-engeenering/dataframe-iteration.html",
-          "modification-date": "2025-12-08"
-        },
-        "ipynb": {
-          "path": "content/teaching/data-engeenering/dataframe-iteration.ipynb",
-          "modification-date": "2025-12-08"
-        }
-      },
-      "pandas-basics-best-practices": {
-        "path": "content/teaching/data-engeenering/pandas-basics-best-practices.md",
-        "modification-date": "2025-12-09"
-      },
       "pandas-3.0.0-release-candidate": {
         "path": "content/teaching/data-engeenering/pandas-3.0.0-release-candidate.md",
         "modification-date": "2025-12-12"
@@ -38,13 +44,13 @@
         "modification-date": "2025-12-09"
       }
     },
-    "README": {
-      "path": "content/teaching/README.md",
-      "modification-date": "2025-12-08"
-    },
     "agh-pandoc-slides-and-reports": {
       "path": "content/teaching/agh-pandoc-slides-and-reports.md",
       "modification-date": "2026-01-15"
+    },
+    "README": {
+      "path": "content/teaching/README.md",
+      "modification-date": "2025-12-08"
     }
   },
   "research": {
