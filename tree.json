@@ -44,19 +44,25 @@
         "modification-date": "2025-12-09"
       }
     },
+    "advanced-database-systems": {
+      "README": {
+        "path": "content/teaching/advanced-database-systems/README.md",
+        "modification-date": "2026-10-08"
+      }
+    },
     "agh-pandoc-slides-and-reports": {
       "path": "content/teaching/agh-pandoc-slides-and-reports.md",
       "modification-date": "2026-01-15"
     },
     "README": {
       "path": "content/teaching/README.md",
-      "modification-date": "2025-12-08"
+      "modification-date": "2026-10-05"
     }
   },
   "research": {
     "README": {
       "path": "content/research/README.md",
-      "modification-date": "2025-12-08"
+      "modification-date": "2026-10-05"
     }
   }
 }
