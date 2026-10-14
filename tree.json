@@ -14,12 +14,16 @@
       "dataframe-iteration": {
         "html": {
           "path": "content/teaching/data-engeenering/dataframe-iteration.html",
-          "modification-date": "2025-12-08"
+          "modification-date": "2026-10-13"
         },
         "ipynb": {
           "path": "content/teaching/data-engeenering/dataframe-iteration.ipynb",
           "modification-date": "2025-12-08"
         }
+      },
+      "jupytext": {
+        "path": "content/teaching/data-engeenering/jupytext.md",
+        "modification-date": "2026-10-13"
       },
       "scaling-to-large-datasets": {
         "html": {
