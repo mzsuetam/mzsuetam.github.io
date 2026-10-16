@@ -4,7 +4,7 @@
 
 `Inteligentne przetwarzanie sygnałów 2026-27-Z`
 
-## Matrtiały
+## Materiały
 
-- [Wykład – Materiały](https://dysk.agh.edu.pl/s/YaYYYepRrHritMo)
-- [Laboratorium – Materiały](https://dysk.agh.edu.pl/s/X7brjycAFn6KsjH)
+- [Wykład](https://dysk.agh.edu.pl/s/YaYYYepRrHritMo)
+- [Laboratorium](https://dysk.agh.edu.pl/s/X7brjycAFn6KsjH)
