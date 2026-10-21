@@ -3,7 +3,7 @@
     "inteligentne-przetwarzanie-sygnalow": {
       "README": {
         "path": "content/teaching/inteligentne-przetwarzanie-sygnalow/README.md",
-        "modification-date": "2026-10-05"
+        "modification-date": "2026-10-16"
       }
     },
     "data-engeenering": {
@@ -21,10 +21,6 @@
           "modification-date": "2025-12-08"
         }
       },
-      "jupytext": {
-        "path": "content/teaching/data-engeenering/jupytext.md",
-        "modification-date": "2026-10-13"
-      },
       "scaling-to-large-datasets": {
         "html": {
           "path": "content/teaching/data-engeenering/scaling-to-large-datasets.html",
@@ -35,13 +31,17 @@
           "modification-date": "2025-12-09"
         }
       },
-      "life-after-data-geneenering-course": {
-        "path": "content/teaching/data-engeenering/life-after-data-geneenering-course.md",
-        "modification-date": "2026-01-26"
+      "lab-workflow-guide": {
+        "path": "content/teaching/data-engeenering/lab-workflow-guide.md",
+        "modification-date": "2026-10-21"
       },
       "pandas-3.0.0-release-candidate": {
         "path": "content/teaching/data-engeenering/pandas-3.0.0-release-candidate.md",
         "modification-date": "2025-12-12"
+      },
+      "life-after-data-engineering-course": {
+        "path": "content/teaching/data-engeenering/life-after-data-engineering-course.md",
+        "modification-date": "2026-10-05"
       },
       "README": {
         "path": "content/teaching/data-engeenering/README.md",
