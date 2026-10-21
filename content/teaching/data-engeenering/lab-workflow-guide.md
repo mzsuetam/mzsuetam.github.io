@@ -99,7 +99,7 @@ lab*/**/*
 
 Jupyter notebook files (`.ipynb`) contain bulky JSON outputs and metadata that create noisy Git diffs. Using `jupytext`, you can export clean `.py` scripts formatted with cell markers (`# %%`).
 
-### One-Time Export (`.ipynb` $\rightarrow$ `.py`)
+### One-Time Export (`.ipynb` -> `.py`)
 
 To convert an existing notebook to a script:
 
@@ -127,3 +127,5 @@ uv run jupytext --sync lab1/lab1.py
 * **Git-friendly:** Commit only the `.py` file to git; avoid messy JSON merge conflicts.
 * **Scriptable:** Run labs directly from the terminal via `uv run python lab1/lab1.py`.
 * **Interactive:** Retain the full interactive notebook experience inside JupyterLab or VS Code.
+
+
